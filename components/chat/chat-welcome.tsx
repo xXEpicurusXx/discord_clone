@@ -1,11 +1,15 @@
 import { Hash } from "lucide-react";
+import { UserAvtar } from "@/components/user-avatar";
 
 interface ChatWelcomeProps {
   type: "conversation" | "channel";
   name: string;
 }
 
-export const ChatWelcome: React.FC<ChatWelcomeProps> = ({ type, name }) => {
+export const ChatWelcome: React.FC<ChatWelcomeProps> = ({
+  type,
+  name,
+}) => {
   return (
     <div className="space-y-2 px-4 mb-4">
       {type === "channel" && (
@@ -14,8 +18,10 @@ export const ChatWelcome: React.FC<ChatWelcomeProps> = ({ type, name }) => {
         </div>
       )}
 
+
+
       <p className="text-xl md:text-3xl font-bold">
-        {type === "channel" ? `Welcome to #${name}` : `Welcome to ${name}`}
+        {type === "channel" ? `Welcome to #${name}` : `${name}`}
       </p>
 
       <p className="text-zinc-600 dark:text-zinc-400 text-sm">

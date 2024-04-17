@@ -17,8 +17,8 @@ model Profile {
   id       String    @id @default(auto()) @map("_id") @db.ObjectId
   userId   String    @unique
   name     String
-  imageUrl String    
-  email    String   @unique 
+  imageUrl String
+  email    String    @unique
   servers  Server[]
   members  Member[]
   channels Channel[]
@@ -30,10 +30,10 @@ model Profile {
 model Server {
   id         String @id @default(auto()) @map("_id") @db.ObjectId
   name       String
-  imageUrl   String 
+  imageUrl   String
   inviteCode String @unique
 
-  profileId String @db.ObjectId
+  profileId String  @db.ObjectId
   profile   Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
 
   members  Member[]
@@ -55,7 +55,7 @@ model Member {
   id   String     @id @default(auto()) @map("_id") @db.ObjectId
   role MemberRole @default(GUEST)
 
-  profileId String @db.ObjectId
+  profileId String  @db.ObjectId
   profile   Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
 
   serverId String @db.ObjectId
@@ -85,7 +85,7 @@ model Channel {
   name String
   type ChannelType @default(TEXT)
 
-  profileId String @db.ObjectId
+  profileId String  @db.ObjectId
   profile   Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
 
   serverId String @db.ObjectId
@@ -102,14 +102,14 @@ model Channel {
 
 model Message {
   id      String @id @default(auto()) @map("_id") @db.ObjectId
-  content String 
+  content String
 
-  fileUrl String? 
+  fileUrl String?
 
   memberId String @db.ObjectId
   member   Member @relation(fields: [memberId], references: [id], onDelete: Cascade)
 
-  channelId String @db.ObjectId
+  channelId String  @db.ObjectId
   channel   Channel @relation(fields: [channelId], references: [id], onDelete: Cascade)
 
   deleted Boolean @default(false)
@@ -138,14 +138,14 @@ model Conversation {
 
 model DirectMessage {
   id      String @id @default(auto()) @map("_id") @db.ObjectId
-  content String 
+  content String
 
-  fileUrl String? 
+  fileUrl String?
 
   memberId String @db.ObjectId
   member   Member @relation(fields: [memberId], references: [id], onDelete: Cascade)
- 
-  conversationId String @db.ObjectId
+
+  conversationId String       @db.ObjectId
   conversation   Conversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
 
   deleted Boolean @default(false)

@@ -47,3 +47,4 @@ const ServerIdPage: React.FC<ServerIdPageProps> = async ({
 };
 
 export default ServerIdPage;
+
