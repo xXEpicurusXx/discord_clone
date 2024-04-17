@@ -1,0 +1,12 @@
+{
+    "build": {
+      "env": {
+        "NODE_ENV": "production"
+      },
+      "https://vercel.com/xxepicurusxxs-projects/discord-clone": [
+        "npm install",
+        "npm run build",
+        "npx prisma generate"
+      ]
+    }
+  }
