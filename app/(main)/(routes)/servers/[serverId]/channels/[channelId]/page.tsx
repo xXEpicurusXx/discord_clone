@@ -75,7 +75,6 @@ const ChannelId: React.FC<ChannelIdProps> = async ({
       {channel.type === ChannelType.VIDEO && (
         <MediaRoom audio={true} video={true} chatId={channel.id} />
       )}
-
     </div>
   );
 };

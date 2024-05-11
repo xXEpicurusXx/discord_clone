@@ -41,10 +41,8 @@ const ServerIdPage: React.FC<ServerIdPageProps> = async ({
   const initialChannel = server?.channels?.[0];
 
   if (initialChannel?.name !== "general") return null;
-  
-  return redirect(`/servers/${serverId}/channels/${initialChannel.id}`);
 
+  return redirect(`/servers/${serverId}/channels/${initialChannel.id}`);
 };
 
 export default ServerIdPage;
-
