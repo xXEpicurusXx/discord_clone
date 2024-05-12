@@ -56,9 +56,10 @@ export default async function handler(
     if (!conversation)
       return res.status(404).json({ message: "Conversation not found" });
 
-    const member = conversation.memberOne.profileId === profile.id
-      ? conversation.memberOne
-      : conversation.memberTwo;
+    const member =
+      conversation.memberOne.profileId === profile.id
+        ? conversation.memberOne
+        : conversation.memberTwo;
 
     if (!member) return res.status(401).json({ message: "Unauthorized" });
 

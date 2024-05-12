@@ -54,8 +54,6 @@ const CreateChannelModal = () => {
 
   const { channelType } = data;
 
-  
-
   const routes = useRouter();
   const params = useParams();
 
@@ -71,7 +69,7 @@ const CreateChannelModal = () => {
 
   useEffect(() => {
     console.log(channelType);
-    
+
     if (channelType) {
       form.setValue("type", channelType);
     } else {
@@ -102,8 +100,6 @@ const CreateChannelModal = () => {
     onClose();
     form.reset();
   };
-
-
 
   return (
     <Dialog open={isModalOpen} onOpenChange={handleModalClose}>

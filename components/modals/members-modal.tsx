@@ -11,7 +11,6 @@ import {
 import { useModal } from "@/hooks/use-modal-store";
 import { ServerWithMembersWithProfile } from "@/types";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { UserAvtar } from "@/components/user-avatar";
 import {
   Check,
   Gavel,
@@ -39,6 +38,7 @@ import { MemberRole } from "@prisma/client";
 import qs from "query-string";
 import axios from "axios";
 import { useRouter } from "next/navigation";
+import { UserAvtar } from "../user-avatar";
 
 const roleIconMap = {
   GUEST: null,
@@ -157,9 +157,7 @@ const MembersModal = () => {
                         </DropdownMenuSub>
                         <DropdownMenuSeparator />
 
-                        <DropdownMenuItem
-                          onClick={() => onKick(member?.id)}
-                        >
+                        <DropdownMenuItem onClick={() => onKick(member?.id)}>
                           <Gavel className="w-4 h-4 mr-2" />
                           Kick
                         </DropdownMenuItem>

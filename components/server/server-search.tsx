@@ -70,7 +70,6 @@ export const ServerSearch: React.FC<ServerSidebarProps> = ({ data }) => {
         <p className="font-semibold text-sm text-zinc-500 dark:text-zinc-400 group-hover:text-zinc-600 dark:group-hover:text-zinc-300 transition">
           Search
         </p>
-       
       </button>
       <CommandDialog open={open} onOpenChange={setOpen}>
         <CommandInput placeholder="Search all channels and members" />

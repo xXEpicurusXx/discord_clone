@@ -1,8 +1,8 @@
 import { Hash } from "lucide-react";
-import { MobileToggle } from "../mobile-toggle";
-import { UserAvtar } from "../user-avatar";
 import { SocketIndicator } from "../socket-indicator";
 import { ChatVideoButton } from "./chat-video-button";
+import { MobileToggle } from "../mobile-toggle";
+import { UserAvtar } from "../user-avatar";
 
 interface ChatHeaderProps {
   name: string;
